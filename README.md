@@ -1,11 +1,7 @@
-<h1 align="center">
-NestJs GraphQL Gateway (supports type-graphql)
-</h1>
-  
+# NestJs GraphQL Gateway (supports type-graphql)
+
 <p align="center">
   NestJS GraphQL Apollo Federation extension. You keep using @nestjs/graphql for all other steps
-</p>
-    <p align="center">
 </p>
 
 <p align="center">
@@ -15,6 +11,10 @@ NestJs GraphQL Gateway (supports type-graphql)
 <a href="https://img.shields.io/github/languages/top/juicycleff/nestjs-graphql-gateway?style=flat-square" target="_blank"><img src="https://img.shields.io/github/languages/top/juicycleff/nestjs-graphql-gateway?style=flat-square" alt="Top Language"/></a>
 <a href="https://img.shields.io/codacy/grade/81314c5a5cb04baabe3eb5262b859288?style=flat-square" target="_blank"><img src="https://img.shields.io/codacy/grade/dc460840375d4ac995f5647a5ed10179?style=flat-square" alt="Top Language"/></a>
 </p>
+
+## Why?
+
+This fork was created to provide an instance of this library that removes the `temp__` property from the `Query` fields as it is no longer required. This fork enables the consumer to federate multiple services, without this the `temp__` field with collide preventing services from booting.
 
 ## Installation
 
@@ -52,12 +52,12 @@ export class AppModule {}
   imports: [
     GraphqlDistributedModule.forRoot({
       autoSchemaFile: 'graphs/demo.gql',
-      
+
       // optional orphaned types
       buildSchemaOptions: {
         orphanedTypes: [Tenant, TenantMember, User],
       },
-      
+
       context: (ctx) => ctx,
     })
   ]
