@@ -1,7 +1,9 @@
 {
   "name": "@yolkai/nestjs-graphql-gateway",
-  "version": "2.0.6",
-  "publishConfig": { "access": "public" },
+  "version": "2.0.9",
+  "publishConfig": {
+    "access": "public"
+  },
   "description": "NestJS GraphQL Apollo Federation extension",
   "author": {
     "name": "Rex Isaac Raphael",
